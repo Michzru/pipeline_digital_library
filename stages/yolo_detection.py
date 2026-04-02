@@ -1,7 +1,7 @@
 from models.yolo import get_yolo_model
 from utils.iou import calculate_iou
 
-def run_detection(pngs, filename):
+def run_yolo_detection(pngs, filename):
     model = get_yolo_model()
 
     # Data Structure
@@ -27,10 +27,6 @@ def run_detection(pngs, filename):
         }
 
         # Perform prediction
-
-        # *******
-        # TREBA SKONTROLOVAT ci funguje cpu a gpu
-        # ******
         yolo_results = model.predict(
             source=pil_image,
             imgsz=1120,
@@ -71,13 +67,8 @@ def run_detection(pngs, filename):
                 "confidence": confidence
             })
 
-
-        # Full page ocr, faster and more accurate
-        page_image_np = np.array(pil_image)
-        full_page_ocr_results = ocr.ocr(page_image_np, cls=True)
-
         # Make node and map text to correct node
-        for node_id, box_data in enumerate(filtered_boxes):
+        for node_id, box_data in enumerate(valid_boxes):
             x1, y1, x2, y2 = box_data["coords"]
 
             # Normalization of coords 0 to 1
@@ -93,27 +84,6 @@ def run_detection(pngs, filename):
             height = norm_y2 - norm_y1
 
             extracted_text = ""
-
-            # if box_data["class_name"] not in ["Picture"]:
-            node_texts = []
-
-            # Mapping text to yolo extraction boxes
-            if full_page_ocr_results and full_page_ocr_results[0] is not None:
-                for line in full_page_ocr_results[0]:
-                    ocr_box = line[0]
-                    text = line[1][0]
-
-                    ocr_x_coords = [pt[0] for pt in ocr_box]
-                    ocr_y_coords = [pt[1] for pt in ocr_box]
-                    ocr_center_x = sum(ocr_x_coords) / 4.0
-                    ocr_center_y = sum(ocr_y_coords) / 4.0
-
-                    margin = 10
-                    if (x1 - margin <= ocr_center_x <= x2 + margin) and \
-                            (y1 - margin <= ocr_center_y <= y2 + margin):
-                        node_texts.append(text)
-
-                extracted_text = " ".join(node_texts)
 
             node = {
                 "node_id": node_id,
@@ -132,8 +102,4 @@ def run_detection(pngs, filename):
 
         document_data["pages"].append(page_data)
 
-    with open(output_json_path, 'w', encoding='utf-8') as f:
-        json.dump(document_data, f, ensure_ascii=False, indent=4)
-
-    print(f"\nDone! JSON generated, saved in: {output_json_path}")
-    return True
+    return document_data

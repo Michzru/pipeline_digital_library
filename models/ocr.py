@@ -1,5 +1,3 @@
-from config import YOLO_MODEL_PATH
-
 _model = None
 
 def get_ocr_model(language='sk', gpu=True):
@@ -9,11 +7,11 @@ def get_ocr_model(language='sk', gpu=True):
         from paddleocr import PaddleOCR
 
         if gpu:
-            # GPU odel
-            _ocr_model = PaddleOCR(use_angle_cls=True, show_log=False, lang=language, use_gpu=True)
+            # GPU model
+            _model = PaddleOCR(use_angle_cls=True, show_log=False, lang=language, use_gpu=gpu)
 
         else:
             # CPU model
-            _model = PaddleOCR(use_angle_cls=True, show_log=False, lang=language)
+            _model = PaddleOCR(use_angle_cls=True, show_log=False, lang=language, use_gpu=gpu)
 
     return _model
