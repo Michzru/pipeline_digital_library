@@ -1,10 +1,9 @@
+from stages.feature_engineering import run_feature_engineering
+from stages.graph import run_graph_inference
 from stages.text_detection import run_text_detection
 from stages.yolo_detection import run_yolo_detection
 from stages.preprocess_pdf import get_png_images
-
-#from ..stages.graph import run_graph
-#from ..stages.extraction import run_extraction
-
+import json
 
 
 def run_document_pipeline(pdf_path: str) -> dict:
@@ -21,18 +20,10 @@ def run_document_pipeline(pdf_path: str) -> dict:
     engineered_results = run_feature_engineering(text_yolo_detection_results)
 
     # Stage 4: graph (GAT)
-    #graph_result = run_graph(detection_result)
+    final_data = run_graph_inference(engineered_results)
 
-    # # Stage 3: extraction
-    # extraction_result = run_extraction(graph_result)
-    #
-    # return {
-    #     "status": "success",
-    #     "stages": {
-    #         "detection": detection_result,
-    #         "graph": graph_result,
-    #         "extraction": extraction_result
-    #     },
-    #     "final_output": extraction_result
-    # }
-    return True
+    # Stage 5: save data
+    with open(f"output_{filename}.json", "w", encoding="utf-8") as f:
+        json.dump(final_data, f, indent=4, default=lambda x: None)
+
+    return final_data
