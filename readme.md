@@ -52,3 +52,5 @@ To deactivate the virtual environment:
 deactivate
 ```
 
+# TO-DO
+GPU add

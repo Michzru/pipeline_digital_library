@@ -64,7 +64,7 @@ class DocumentMultiTaskGAT(nn.Module):
         return self.edge_classifier(edge_features).squeeze(-1)
 
 
-def get_gat_model(gpu = True,):
+def get_gat_model(verbose, gpu = True):
     global _model
 
     if _model is None:
@@ -72,10 +72,13 @@ def get_gat_model(gpu = True,):
             _model = DocumentMultiTaskGAT(num_node_classes=8).to('cuda')
             _model.load_state_dict(torch.load(GAT_MODEL_PATH, map_location='cuda'))
             _model.eval()
+            if verbose:
+                print("GAT model loaded on GPU.")
         else:
             _model = DocumentMultiTaskGAT(num_node_classes=8).to('cpu')
             _model.load_state_dict(torch.load(GAT_MODEL_PATH, map_location='cpu'))
             _model.eval()
-
+            if not verbose:
+                print("GAT model loaded on CPU.")
 
     return _model

@@ -15,3 +15,8 @@ CLASS_NAMES = {
     6: "Page-header",
     7: "Other",
 }
+
+UNITABLE_DIR = "models/unitable"
+UNITABLE_STRUCTURE_WEIGHTS = "model_weights/unitable/unitable_large_structure.pt"
+UNITABLE_BBOX_WEIGHTS = "model_weights/unitable/unitable_large_bbox.pt"
+UNITABLE_CONTENT_WEIGHTS = "model_weights/unitable/unitable_large_content.pt"

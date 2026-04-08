@@ -2,7 +2,7 @@ from config import YOLO_MODEL_PATH
 
 _model = None
 
-def get_yolo_model(gpu=True):
+def get_yolo_model(verbose, gpu=True):
     global _model
 
     if _model is None:
@@ -11,9 +11,11 @@ def get_yolo_model(gpu=True):
         model = YOLOv10(YOLO_MODEL_PATH)
         if gpu:
             _model = model.to('cuda')
-            print("YOLO model load on GPU.")
+            if verbose:
+                print("YOLO model loaded on GPU.")
         else:
             _model = model.to('cpu')
-            print("YOLO model load on CPU.")
+            if not verbose:
+                print("YOLO model loaded on CPU.")
 
     return _model
