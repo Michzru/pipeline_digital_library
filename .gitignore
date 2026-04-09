@@ -4,3 +4,5 @@ data/
 
 pipeline_digital_library.egg-info
 model_weights/unitable/*
+.DS_Store
+.idea/
