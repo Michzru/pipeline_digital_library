@@ -1,133 +1,93 @@
 aiohappyeyeballs==2.6.1
 aiohttp==3.13.5
 aiosignal==1.4.0
-aistudio-sdk==0.3.8
 albucore==0.0.24
 albumentations==2.0.8
 annotated-doc==0.0.4
 annotated-types==0.7.0
 anyio==4.13.0
-astor==0.8.1
 attrs==26.1.0
-bce-python-sdk==0.9.68
 beautifulsoup4==4.14.3
-brotlicffi @ file:///C:/miniconda3/conda-bld/brotlicffi_1764961370587/work
-certifi @ file:///C:/Users/task_176765900829408/croot/certifi_1767659214946/work/certifi
-cffi @ file:///C:/miniconda3/conda-bld/cffi_1761832792265/work
-chardet==7.4.0.post2
-charset-normalizer @ file:///C:/miniconda3/conda-bld/charset-normalizer_1761745005832/work
-click==8.3.1
-colorama==0.4.6
-colorlog==6.10.1
+certifi==2026.2.25
+charset-normalizer==3.4.7
+click==8.3.2
 contourpy==1.3.3
-crc32c==2.8
 cycler==0.12.1
-Cython==3.2.4
-decorator==5.2.1
-doclayout_yolo==0.0.4
+doclayout-yolo==0.0.4
 easyocr==1.7.2
-filelock @ file:///C:/Users/task_176943975530691/croot/filelock_1769440571783/work
-fire==0.7.1
+einops==0.8.2
+filelock==3.25.2
 fonttools==4.62.1
 frozenlist==1.8.0
 fsspec==2026.3.0
-future==1.0.0
-gmpy2 @ file:///C:/miniconda3/conda-bld/gmpy2_1764748103115/work
 h11==0.16.0
 hf-xet==1.4.3
 httpcore==1.0.9
 httpx==0.28.1
-huggingface_hub==1.7.2
-idna @ file:///C:/miniconda3/conda-bld/idna_1761912044050/work
-ImageIO==2.37.3
-imagesize==2.0.0
-imgaug==0.4.0
-Jinja2 @ file:///C:/b/abs_920kup4e6u/croot/jinja2_1741711580669/work
+huggingface-hub==1.9.2
+idna==3.11
+imageio==2.37.3
+jinja2==3.1.6
 joblib==1.5.3
+jsonlines==4.0.0
 kiwisolver==1.5.0
 lazy-loader==0.5
-lmdb==2.2.0
-lxml==6.0.2
 markdown-it-py==4.0.0
-MarkupSafe @ file:///C:/b/abs_a0ma7ge0jc/croot/markupsafe_1738584052792/work
+markupsafe==3.0.3
 matplotlib==3.10.8
 mdurl==0.1.2
-mkl-service==2.4.0
-mkl_fft @ file:///C:/Users/dev-admin/mkl/mkl_fft_1730823082242/work
-mkl_random @ file:///C:/Users/dev-admin/mkl/mkl_random_1730822522280/work
-modelscope==1.35.3
-mpmath @ file:///C:/b/abs_7833jrbiox/croot/mpmath_1690848321154/work
+mpmath==1.3.0
 multidict==6.7.1
-networkx @ file:///C:/miniconda3/conda-bld/networkx_1765378660274/work
+networkx==3.6.1
 ninja==1.13.0
 numpy==2.4.4
-opencv-contrib-python==4.10.0.84
-opencv-python==4.11.0.86
+opencv-python==4.13.0.92
 opencv-python-headless==4.13.0.92
-opt-einsum==3.3.0
 packaging==26.0
-paddlex==3.4.3
 pandas==3.0.2
 pdf2image==1.17.0
-pillow @ file:///C:/b/abs_b50vowcrzo/croot/pillow_1738010273782/work
-prettytable==3.17.0
+pillow==12.2.0
+-e file:///Users/zrutix/Projects/Bakalarka/pipeline_digital_library
 propcache==0.4.1
-protobuf==3.20.2
 psutil==7.2.2
 py-cpuinfo==9.0.0
 pyclipper==1.4.0
-pycparser @ file:///C:/Users/task_177495971060608/croot/pycparser_1774959807716/work
-pycryptodome==3.23.0
 pydantic==2.12.5
-pydantic_core==2.41.5
-Pygments==2.20.0
+pydantic-core==2.41.5
+pygments==2.20.0
 pyparsing==3.3.2
-pypdfium2==5.6.0
-PySocks @ file:///C:/miniconda3/conda-bld/pysocks_1761753028158/work
 python-bidi==0.6.7
 python-dateutil==2.9.0.post0
-python-docx==1.2.0
-PyYAML==6.0.2
-RapidFuzz==3.14.3
-regex==2026.3.32
-requests @ file:///C:/Users/task_177506609072086/croot/requests_1775066161205/work
+pyyaml==6.0.3
+regex==2026.4.4
+requests==2.33.1
 rich==14.3.3
-ruamel.yaml==0.19.1
 safetensors==0.7.0
 scikit-image==0.26.0
 scikit-learn==1.8.0
 scipy==1.17.1
 seaborn==0.13.2
 sentence-transformers==5.3.0
+setuptools==81.0.0
 shapely==2.1.2
 shellingham==1.5.4
 simsimd==6.5.16
 six==1.17.0
 soupsieve==2.8.3
 stringzilla==4.6.0
-sympy==1.13.1
-termcolor==3.3.0
+sympy==1.14.0
 thop==0.1.1.post2209072238
 threadpoolctl==3.6.0
 tifffile==2026.3.3
 tokenizers==0.22.2
-torch==2.5.1
+torch==2.11.0
 torch-geometric==2.7.0
-torch_cluster==1.6.3+pt25cu121
-torch_scatter==2.1.2+pt25cu121
-torch_sparse==0.6.18+pt25cu121
-torch_spline_conv==1.2.2+pt25cu121
-torchaudio==2.5.1
-torchvision==0.20.1
+torchvision==0.26.0
 tqdm==4.67.3
-transformers==5.4.0
+transformers==5.5.0
 typer==0.24.1
+typing-extensions==4.15.0
 typing-inspection==0.4.2
-typing_extensions @ file:///C:/b/abs_ecq8gc0vbm/croot/typing_extensions_1756281142218/work
-tzdata==2025.3
-ujson==5.12.0
-urllib3 @ file:///C:/Users/task_176781036847582/croot/urllib3_1767810492638/work
-wcwidth==0.6.0
-win_inet_pton @ file:///C:/miniconda3/conda-bld/win_inet_pton_1761746278197/work
+urllib3==2.6.3
 xxhash==3.6.0
 yarl==1.23.0

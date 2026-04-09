@@ -1,4 +1,6 @@
 data/
 .cache/
-.venv
+.venv/
 
+pipeline_digital_library.egg-info
+model_weights/unitable/*

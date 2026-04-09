@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pipeline_digital_library"
+version = "0.1.0"
+description = "Pipeline for processing documents using YOLO, GAT, transformer, and TSR"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+    {name = "Michal Zrutta", email = "xzrutta@stuba.sk"}
+]
+dependencies = [
+    "numpy==2.4.4",
+    "opencv-python==4.13.0.92",
+    "opencv-python-headless==4.13.0.92",
+    "torch==2.11.0",
+    "torchvision==0.26.0",
+    "torch-geometric==2.7.0",
+    "pandas==3.0.2",
+    "doclayout-yolo==0.0.4",
+    "easyocr==1.7.2",
+    "einops==0.8.2",
+    "jsonlines==4.0.0",
+    "albumentations==2.0.8",
+    "scikit-image==0.26.0",
+    "transformers==5.5.0",
+    "sentence-transformers==5.3.0",
+    "typer==0.24.1",
+    "pdf2image==1.17.0",
+    "beautifulsoup4==4.14.3",
+    "tqdm==4.67.3",
+    "pyyaml==6.0.3",
+    "scipy==1.17.1",
+    "networkx==3.6.1",
+    "pillow==12.2.0",
+    "requests==2.33.1",
+]
+
+[project.scripts]
+# This allows you to run the pipeline from the terminal using the command 'run-my-pipeline'
+run-my-pipeline = "pipeline_digital_library.core:run_pipeline"
+
+[tool.setuptools.packages.find]
+# Automatically finds the pipeline_digital_library directory as a package
+where = ["."]
+include = ["pipeline_digital_library*"]
+
+[tool.setuptools.package-data]
+"pipeline_digital_library" = [
+    "models/unitable/vocab/*.json",
+    "models/unitable/src/**/*.py",
+]
